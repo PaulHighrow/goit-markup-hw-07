@@ -1069,6 +1069,11 @@ svg {
   resize: none;
 }
 
+/* Цвет текста плейсхолдера */
+.modal-form-textarea::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
 /* Стилизация чекбокса */
 .modal-form-agreement {
   /* Выравнивание и центрирование элементов чексбокса */
@@ -1103,12 +1108,14 @@ svg {
   height: 15px;
 
   /* Эффект перехода цвета иконки кастомного чекбокса при фокусе */
-  transition: fill var(--animation-global);
+  transition: fill var(--animation-global), outline var(--animation-global);
 }
 
 /* Имитация состояния фокуса для кастомного чекбокса */
-.modal-form-agreement:focus-within > .modal-checkbox-icon {
-  fill: var(--accent-color);
+.modal-form-agreement:focus,
+.modal-form-agreement:hover > .modal-checkbox-icon {
+  /* Смена цвета иконки при фокусе и ховере */
+  fill: var(--secondary-accent-color);
 }
 
 /* Скрытая иконка отмеченного чекбокса */
